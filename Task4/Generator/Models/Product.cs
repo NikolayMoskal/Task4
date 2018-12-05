@@ -7,10 +7,10 @@ namespace Task4.Generator.Models
         public string Name { get; }
         public double Sum { get; }
 
-        public Product(string name, double sum)
+        public Product(string name, double sum = 0)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
-            Sum = sum < 0 ? throw new ArgumentException($"Wrong product sum: {sum}") : sum;
+            Sum = sum <= 0 ? new Random().Next(10, 100) : sum;
         }
     }
 }

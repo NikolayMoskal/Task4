@@ -112,10 +112,6 @@ namespace Task4.Generator.Models
         
         public void Generate(string directoryPath, int linesCount)
         {
-            if (linesCount < 0)
-            {
-                throw new ArgumentException($"Invalid lines count: {linesCount}");
-            }
             // generate new CSV content
             var builder = new StringBuilder(0);
             for (var index = 0; index < linesCount; index++)
