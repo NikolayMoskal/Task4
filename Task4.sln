@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileGenerator", "FileGenerator\FileGenerator.csproj", "{93A10C54-B8FF-44FC-B993-49A31A47BF28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{776D10B5-4D6E-4158-93C2-0513FC2490CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{93A10C54-B8FF-44FC-B993-49A31A47BF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A10C54-B8FF-44FC-B993-49A31A47BF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A10C54-B8FF-44FC-B993-49A31A47BF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
