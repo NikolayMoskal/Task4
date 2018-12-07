@@ -1,4 +1,4 @@
-namespace Task4.Generator.Interfaces
+namespace FileGenerator.Generator.Interfaces
 {
     public interface ICsvLine
     {

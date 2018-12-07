@@ -7,8 +7,8 @@
         <ProjectGuid>{93A10C54-B8FF-44FC-B993-49A31A47BF28}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Task4</RootNamespace>
-        <AssemblyName>Task4</AssemblyName>
+        <RootNamespace>FileGenerator</RootNamespace>
+        <AssemblyName>FileGenerator</AssemblyName>
         <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>

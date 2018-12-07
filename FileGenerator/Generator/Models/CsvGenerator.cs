@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Text;
+using FileGenerator.Generator.Interfaces;
 using NLog;
-using Task4.Generator.Interfaces;
 
-namespace Task4.Generator.Models
+namespace FileGenerator.Generator.Models
 {
     public class CsvGenerator
     {

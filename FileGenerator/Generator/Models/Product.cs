@@ -1,6 +1,6 @@
 using System;
 
-namespace Task4.Generator.Models
+namespace FileGenerator.Generator.Models
 {
     public class Product
     {

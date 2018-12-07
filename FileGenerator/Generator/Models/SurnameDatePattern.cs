@@ -1,7 +1,7 @@
 using System;
-using Task4.Generator.Interfaces;
+using FileGenerator.Generator.Interfaces;
 
-namespace Task4.Generator.Models
+namespace FileGenerator.Generator.Models
 {
     public class SurnameDateFileName : IFileName
     {
