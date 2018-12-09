@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.Linq;
+using System.Threading;
 using FileGenerator.Generator.Models;
 using NLog;
 
@@ -26,9 +29,9 @@ namespace FileGenerator
             var fileName = new SurnameDateFileName(_employeeName, DateTime.Today, "_");
             try
             {
-                var product = GetCustomProduct(appSettings);
-                var clientName = GetCustomClientName(appSettings);
-                var line = new CsvLine(clientName, product);
+                var products = GetCustomProduct(appSettings);
+                var clientNames = GetCustomClientName(appSettings);
+                var line = new CsvLine(clientNames, products);
                 new CsvGenerator(fileName, line).Generate(_directoryPath, _linesCount);
             }
             catch (ArgumentException e)
@@ -48,13 +51,13 @@ namespace FileGenerator
                 }
 
                 Logger.Warn("App settings is empty");
-                return null;
             }
             catch (ConfigurationErrorsException e)
             {
                 Logger.Error($"Error reading app settings: {e.StackTrace}");
-                return null;
             }
+
+            return null;
         }
 
         private static void ParseAppSettings(NameValueCollection appSettings)
@@ -70,19 +73,12 @@ namespace FileGenerator
             }
         }
 
-        private static string GetCustomClientName(NameValueCollection appSettings)
+        private static List<string> GetCustomClientName(NameValueCollection appSettings)
         {
-            var names = appSettings["clientNames"]?.Split(',');
-            if (names == null)
-            {
-                return null;
-            }
-            
-            var index = new Random().Next(0, names.Length);
-            return names[index];
+            return appSettings["clientNames"]?.Split(',').ToList();
         }
 
-        private static Product GetCustomProduct(NameValueCollection appSettings)
+        private static List<Product> GetCustomProduct(NameValueCollection appSettings)
         {
             var productNames = appSettings["products"]?.Split(',');
             if (productNames == null)
@@ -90,9 +86,9 @@ namespace FileGenerator
                 return null;
             }
 
-            var index = new Random().Next(0, productNames.Length);
-            return new Product(productNames[index]);
-
+            var list = new List<Product>(0);
+            list.AddRange(productNames.Select(name => new Product(name)));
+            return list;
         }
     }
 }

@@ -4,12 +4,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{93A10C54-B8FF-44FC-B993-49A31A47BF28}</ProjectGuid>
+        <ProjectGuid>{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>FileGenerator</RootNamespace>
-        <AssemblyName>FileGenerator</AssemblyName>
-        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <RootNamespace>Task4.Console</RootNamespace>
+        <AssemblyName>Task4.Console</AssemblyName>
+        <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,12 +48,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Generator\Interfaces\ICsvLine.cs"/>
-        <Compile Include="Generator\Interfaces\IFileName.cs"/>
-        <Compile Include="Generator\Models\CsvGenerator.cs"/>
-        <Compile Include="Generator\Models\CsvLine.cs"/>
-        <Compile Include="Generator\Models\Product.cs"/>
-        <Compile Include="Generator\Models\SurnameDatePattern.cs"/>
+        <Compile Include="CsvFileWatcher.cs"/>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
@@ -69,12 +64,18 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+            <Project>{40a0bb5d-e9a6-4c1c-86d3-72ddd67a7eb4}</Project>
+            <Name>BusinessLayer</Name>
+        </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-               Other similar extension points exist, see Microsoft.Common.targets.
-          <Target Name="BeforeBuild">
-          </Target>
-          <Target Name="AfterBuild">
-          </Target>
-          -->
+           Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+      -->
 </Project>

@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileGenerator", "FileGenera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{776D10B5-4D6E-4158-93C2-0513FC2490CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{40A0BB5D-E9A6-4C1C-86D3-72DDD67A7EB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.Console", "Task4.Console\Task4.Console.csproj", "{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{776D10B5-4D6E-4158-93C2-0513FC2490CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A0BB5D-E9A6-4C1C-86D3-72DDD67A7EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A0BB5D-E9A6-4C1C-86D3-72DDD67A7EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A0BB5D-E9A6-4C1C-86D3-72DDD67A7EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A0BB5D-E9A6-4C1C-86D3-72DDD67A7EB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

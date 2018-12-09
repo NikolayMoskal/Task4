@@ -16,12 +16,11 @@ namespace DataAccessLayer.Configurations
         
         public static ISession OpenSession()
         {
-            
             var cfg = new Configuration()
                 .DataBaseIntegration(db =>
                 {
                     db.ConnectionString = GetConnectionString();
-                    db.Dialect<MsSql2008Dialect>();
+                    db.Dialect<MySQLDialect>();
                 });
             var mapper = new ModelMapper();
             mapper.AddMappings(Assembly.GetExecutingAssembly().GetExportedTypes());

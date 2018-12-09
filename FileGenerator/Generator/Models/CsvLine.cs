@@ -1,24 +1,27 @@
 using System;
+using System.Collections.Generic;
 using FileGenerator.Generator.Interfaces;
 
 namespace FileGenerator.Generator.Models
 {
     public class CsvLine : ICsvLine
     {
-        private string ClientName { get; }
-        private Product Product { get; }
+        private List<string> ClientNames { get; }
+        private List<Product> Products { get; }
+        private readonly Random _random;
 
-        public CsvLine(string clientName, Product product)
+        public CsvLine(List<string> clientNames, List<Product> products)
         {
-            Product = product ?? throw new ArgumentNullException(nameof(product));
-            ClientName = string.IsNullOrEmpty(clientName) 
-                ? throw new ArgumentException("Client name is not present") 
-                : clientName;
+            Products = products ?? throw new ArgumentNullException(nameof(products));
+            ClientNames = clientNames ?? throw new ArgumentNullException(nameof(clientNames));
+            _random = new Random();
         }
 
         public string CombineLine()
         {
-            return string.Join(",", DateTime.Now.ToString("d"), ClientName, Product.Name, Product.Sum);
+            var product = Products[_random.Next(0, Products.Count)];
+            var clientName = ClientNames[_random.Next(0, ClientNames.Count)];
+            return string.Join(",", DateTime.Now.ToString("d"), clientName, product.Name, product.Sum);
         }
     }
 }
