@@ -14,7 +14,7 @@ namespace DataAccessLayer.Entities.Mappings
             ManyToOne(x => x.Order, c =>
             {
                 c.Cascade(Cascade.Persist);
-                c.Column("Order_Id");
+                c.Column("Product_Id");
             });
         }
     }

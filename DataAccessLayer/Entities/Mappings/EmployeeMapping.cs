@@ -11,7 +11,7 @@ namespace DataAccessLayer.Entities.Mappings
             Property(x => x.Name);
             Bag(x => x.Orders, c =>
             {
-                c.Key(y => y.Column("Order_Id"));
+                c.Key(y => y.Column("Employee_Id"));
                 c.Inverse(true);
             }, r => r.OneToMany());
         }

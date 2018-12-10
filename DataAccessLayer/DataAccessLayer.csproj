@@ -78,7 +78,11 @@
         <Compile Include="Entities\Order.cs"/>
         <Compile Include="Entities\Product.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Repositories\ClientRepository.cs"/>
+        <Compile Include="Repositories\EmployeeRepository.cs"/>
         <Compile Include="Repositories\IRepository.cs"/>
+        <Compile Include="Repositories\OrderRepository.cs"/>
+        <Compile Include="Repositories\ProductRepository.cs"/>
         <Compile Include="Repositories\RepositoryBase.cs"/>
     </ItemGroup>
     <ItemGroup>
@@ -86,15 +90,12 @@
         <None Include="NLog.xsd"/>
         <None Include="packages.config"/>
     </ItemGroup>
-    <ItemGroup>
-        <Content Include="app.config"/>
-    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-           Other similar extension points exist, see Microsoft.Common.targets.
-      <Target Name="BeforeBuild">
-      </Target>
-      <Target Name="AfterBuild">
-      </Target>
-      -->
+             Other similar extension points exist, see Microsoft.Common.targets.
+        <Target Name="BeforeBuild">
+        </Target>
+        <Target Name="AfterBuild">
+        </Target>
+        -->
 </Project>

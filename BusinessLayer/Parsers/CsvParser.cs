@@ -13,6 +13,7 @@ namespace BusinessLayer.Parsers
         {
             try
             {
+                var employeeName = fileName.Split('_')[0];
                 var list = new List<CsvLine>(0);
                 using (var stream = new StreamReader(fileName))
                 {
@@ -21,7 +22,7 @@ namespace BusinessLayer.Parsers
                     {
                         try
                         {
-                            list.Add(new CsvLine(line.Split(',')));
+                            list.Add(new CsvLine(employeeName, line.Split(',')));
                         }
                         catch (Exception e)
                         {

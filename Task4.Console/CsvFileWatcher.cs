@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Threading;
+using BusinessLayer;
+using BusinessLayer.Parsers;
 using NLog;
 
 namespace Task4.Console
@@ -39,7 +41,9 @@ namespace Task4.Console
 
         private void OnCreated(object sender, FileSystemEventArgs args)
         {
-            // создать потоки для каждого файла и FileHandler
+            var handler = new FileHandler(args.FullPath, new CsvParser());
+            var thread = new Thread(handler.StartHandle);
+            thread.Start();
         }
     }
 }

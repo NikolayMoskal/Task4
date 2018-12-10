@@ -39,7 +39,7 @@ namespace DataAccessLayer.Configurations
                 var appSettings = ConfigurationManager.AppSettings;
                 if (appSettings.Count > 0)
                 {
-                    return appSettings["connectionString"] ?? "";
+                    return appSettings["connectionString"];
                 }
                 
                 Logger.Warn("App settings is empty");

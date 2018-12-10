@@ -5,18 +5,18 @@ using NHibernate;
 
 namespace DataAccessLayer.Repositories
 {
-    public class RepositoryBase<T> : IDisposable, IRepository<T> where T : class
+    public abstract class RepositoryBase<T> : IDisposable, IRepository<T> where T : class
     {
         protected ISession Session;
         protected ITransaction Transaction;
-        
-        public RepositoryBase()
+
+        protected RepositoryBase()
         {
             Session = NHibernateConfiguration.OpenSession();
             Transaction = null;
         }
 
-        public RepositoryBase(ISession session)
+        protected RepositoryBase(ISession session)
         {
             Session = session ?? throw new ArgumentNullException(nameof(session));
         }
@@ -61,6 +61,8 @@ namespace DataAccessLayer.Repositories
         {
             return Session.Load<T>(id);
         }
+
+        public abstract bool Exists(T item);
 
         public void Save(T item)
         {
