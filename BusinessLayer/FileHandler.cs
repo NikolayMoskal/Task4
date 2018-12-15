@@ -29,14 +29,19 @@ namespace BusinessLayer
                 try
                 {
                     var client = new Client {Name = line.ClientName};
+                    Save<ClientRepository, Client>(client, out var savedClient);
                     var employee = new Employee {Name = line.EmployeeName};
-                    var order = new Order {Client = client, Employee = employee};
-                    var product = new Product
-                        {Date = line.Date, Name = line.ProductName, Price = line.ProductSum, Order = order};
-                    Save<ClientRepository, Client>(client);
-                    Save<EmployeeRepository, Employee>(employee);
-                    Save<OrderRepository, Order>(order);
-                    Save<ProductRepository, Product>(product);
+                    Save<EmployeeRepository, Employee>(employee, out var savedEmployee);
+                    var product = new Product {Name = line.ProductName, Price = line.ProductSum};
+                    Save<ProductRepository, Product>(product, out var savedProduct);
+                    var booking = new Booking
+                    {
+                        Date = line.Date, 
+                        Client = savedClient ?? client, 
+                        Employee = savedEmployee ?? employee,
+                        Product = savedProduct ?? product
+                    };
+                    Save<BookingRepository, Booking>(booking, out _);
                 }
                 finally
                 {
@@ -47,7 +52,7 @@ namespace BusinessLayer
             File.Move(_fileName, _fileName + "_");
         }
 
-        private void Save<TRepository, TItem>(TItem item)
+        private void Save<TRepository, TItem>(TItem item, out TItem foundItem)
             where TRepository : RepositoryBase<TItem>, new()
             where TItem : class
         {
@@ -56,14 +61,19 @@ namespace BusinessLayer
                 try
                 {
                     repository.BeginTransaction();
-                    if (!repository.Exists(item))
+                    // проверяет существование объекта в базе и, если он существует, возвращает первый найденный
+                    if (!repository.Exists(item, out var existsItem))
                     {
                         repository.Save(item);
                     }
+
+                    // т.о., на выходе всегда получим или сохраненный объект с заданным Id, или уже существующий
+                    foundItem = existsItem ?? item;
                 }
                 catch
                 {
                     repository.RollbackTransaction();
+                    foundItem = null;
                 }
             }
         }

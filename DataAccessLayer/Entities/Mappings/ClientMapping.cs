@@ -9,7 +9,7 @@ namespace DataAccessLayer.Entities.Mappings
         {
             Id(x => x.Id, map => map.Generator(Generators.Native));
             Property(x => x.Name);
-            Bag(x => x.Orders, c =>
+            Bag(x => x.Bookings, c =>
             {
                 c.Key(y => y.Column("Client_Id"));
                 c.Inverse(true);

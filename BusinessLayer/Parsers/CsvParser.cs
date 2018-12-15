@@ -13,7 +13,7 @@ namespace BusinessLayer.Parsers
         {
             try
             {
-                var employeeName = fileName.Split('_')[0];
+                var employeeName = new FileInfo(fileName).Name.Split('_')[0];
                 var list = new List<CsvLine>(0);
                 using (var stream = new StreamReader(fileName))
                 {
@@ -55,7 +55,7 @@ namespace BusinessLayer.Parsers
             }
             catch (IOException e)
             {
-                Logger.Error($"Error while rading the file {fileName}: {e.StackTrace}");
+                Logger.Error($"Error while reading the file {fileName}: {e.StackTrace}");
             }
 
             return null;

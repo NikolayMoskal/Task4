@@ -9,13 +9,12 @@ namespace DataAccessLayer.Entities.Mappings
         {
             Id(x => x.Id, map => map.Generator(Generators.Native));
             Property(x => x.Name);
-            Property(x => x.Date);
             Property(x => x.Price);
-            ManyToOne(x => x.Order, c =>
+            Bag(x => x.Bookings, c =>
             {
-                c.Cascade(Cascade.Persist);
-                c.Column("Product_Id");
-            });
+                c.Key(y => y.Column("Product_Id"));
+                c.Inverse(true);
+            }, r => r.OneToMany());
         }
     }
 }

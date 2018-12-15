@@ -62,7 +62,7 @@ namespace DataAccessLayer.Repositories
             return Session.Load<T>(id);
         }
 
-        public abstract bool Exists(T item);
+        public abstract bool Exists(T item, out T foundItem);
 
         public void Save(T item)
         {

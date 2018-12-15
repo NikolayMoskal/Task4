@@ -6,6 +6,10 @@ namespace DataAccessLayer.Entities
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
-        public virtual IList<Order> Orders { get; set; }
+        public virtual IList<Booking> Bookings { get; set; }
+
+        public Employee()
+        {
+        }
     }
 }

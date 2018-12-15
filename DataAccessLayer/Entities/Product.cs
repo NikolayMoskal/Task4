@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace DataAccessLayer.Entities
 {
@@ -6,8 +7,11 @@ namespace DataAccessLayer.Entities
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
-        public virtual DateTime Date { get; set; }
         public virtual double Price { get; set; }
-        public virtual Order Order { get; set; }
+        public virtual IList<Booking> Bookings { get; set; }
+
+        public Product()
+        {
+        }
     }
 }

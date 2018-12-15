@@ -3,11 +3,12 @@ using NHibernate.Mapping.ByCode.Conformist;
 
 namespace DataAccessLayer.Entities.Mappings
 {
-    public class OrderMapping : ClassMapping<Order>
+    public class BookingMapping : ClassMapping<Booking>
     {
-        public OrderMapping()
+        public BookingMapping()
         {
             Id(x => x.Id, map => map.Generator(Generators.Native));
+            Property(x => x.Date);
             ManyToOne(x => x.Client, c =>
             {
                 c.Cascade(Cascade.Persist);
@@ -18,11 +19,11 @@ namespace DataAccessLayer.Entities.Mappings
                 c.Cascade(Cascade.Persist);
                 c.Column("Employee_Id");
             });
-            Bag(x => x.Products, c =>
+            ManyToOne(x => x.Product, c =>
             {
-                c.Key(y => y.Column("Product_Id"));
-                c.Inverse(true);
-            }, r => r.OneToMany());
+                c.Cascade(Cascade.Persist);
+                c.Column("Product_Id");
+            });
         }
     }
 }
