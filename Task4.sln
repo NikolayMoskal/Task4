@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileGenerator", "FileGenerator\FileGenerator.csproj", "{93A10C54-B8FF-44FC-B993-49A31A47BF28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{776D10B5-4D6E-4158-93C2-0513FC2490CE}"
@@ -7,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{40A0BB5D-E9A6-4C1C-86D3-72DDD67A7EB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.Console", "Task4.Console\Task4.Console.csproj", "{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.Service", "Task4.Service\Task4.Service.csproj", "{544DC509-8F66-4E0D-B56C-E660D938809F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,15 @@ Global
 		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40B37A8A-B7A9-4FA3-B359-65C066A0EFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544DC509-8F66-4E0D-B56C-E660D938809F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544DC509-8F66-4E0D-B56C-E660D938809F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544DC509-8F66-4E0D-B56C-E660D938809F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544DC509-8F66-4E0D-B56C-E660D938809F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E25843A5-880F-4462-B877-297C8820C0F0}
 	EndGlobalSection
 EndGlobal

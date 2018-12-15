@@ -1,11 +1,9 @@
-using System;
 using System.IO;
 using System.Threading;
-using BusinessLayer;
 using BusinessLayer.Parsers;
 using NLog;
 
-namespace Task4.Console
+namespace BusinessLayer
 {
     public class CsvFileWatcher
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Threading;
+using BusinessLayer;
 using NLog;
 
 namespace Task4.Console
